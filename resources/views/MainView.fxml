@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="rootNode" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="800.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="de.shd.farm.controller.MainView">
+    <stylesheets>
+        <URL value="@Main.css" />
+    </stylesheets>
+    <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" hgap="8.0" styleClass="background-lighter" vgap="8.0" VBox.vgrow="SOMETIMES">
+        <padding>
+            <Insets bottom="16.0" top="16.0" />
+        </padding>
+        <Button fx:id="newDb" mnemonicParsing="false" prefWidth="125.0" text="New">
+            <FlowPane.margin>
+                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+            </FlowPane.margin>
+        </Button>
+        <Button fx:id="openDb" mnemonicParsing="false" prefWidth="125.0" text="Open">
+            <FlowPane.margin>
+                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+            </FlowPane.margin>
+        </Button>
+        <Button fx:id="importFromFile" disable="true" mnemonicParsing="false" prefWidth="125.0" text="Import">
+            <FlowPane.margin>
+                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+            </FlowPane.margin>
+        </Button>
+        <Button fx:id="exportToFile" disable="true" mnemonicParsing="false" prefWidth="125.0" text="Export">
+            <FlowPane.margin>
+                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+            </FlowPane.margin>
+        </Button>
+        <Separator orientation="VERTICAL">
+            <padding>
+                <Insets left="8.0" right="8.0" />
+            </padding>
+        </Separator>
+        <Button fx:id="switchI18N" mnemonicParsing="false" prefWidth="125.0" text="DE">
+            <FlowPane.margin>
+                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+            </FlowPane.margin>
+        </Button>
+    </FlowPane>
+    <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
+        <AnchorPane styleClass="background">
+            <Label fx:id="nothingSelected" alignment="CENTER" lineSpacing="1.0" text="do a choice ..." textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <padding>
+                    <Insets bottom="32.0" left="32.0" right="32.0" top="32.0" />
+                </padding>
+            </Label>
+            <VBox fx:id="plantBox" visible="false" alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <padding>
+                    <Insets top="8.0" />
+                </padding>
+                <SplitPane dividerPositions="0.5" styleClass="background" VBox.vgrow="ALWAYS">
+                    <VBox>
+                        <Label fx:id="moreTitle" styleClass="header" text="More" />
+                        <GridPane hgap="16.0" vgap="32.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="ALWAYS" />
+                                <ColumnConstraints hgrow="ALWAYS" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <VBox.margin>
+                                <Insets bottom="16.0" top="32.0" />
+                            </VBox.margin>
+                            <Label fx:id="countMoreLabel" text="current on field: " />
+                            <Label fx:id="countMore" text="12" GridPane.columnIndex="1" />
+                            <Label fx:id="harvestedMoreLabel" text="already harvested: " GridPane.rowIndex="1" />
+                            <Label fx:id="harvestedMore" text="34" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        </GridPane>
+                        <padding>
+                            <Insets left="16.0" right="16.0" top="16.0" />
+                        </padding>
+                    </VBox>
+                    <VBox>
+                        <Label fx:id="wheatTitle" styleClass="header" text="Wheat" />
+                        <GridPane hgap="16.0" vgap="32.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="ALWAYS" />
+                                <ColumnConstraints hgrow="ALWAYS" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <VBox.margin>
+                                <Insets bottom="16.0" top="32.0" />
+                            </VBox.margin>
+                            <Label fx:id="countWheatLabel" text="current on field: " />
+                            <Label fx:id="countWheat" text="12" GridPane.columnIndex="1" />
+                            <Label fx:id="harvestedWheatLabel" text="already harvested: " GridPane.rowIndex="1" />
+                            <Label fx:id="harvestedWheat" text="34" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        </GridPane>
+                        <padding>
+                            <Insets left="16.0" right="16.0" top="16.0" />
+                        </padding>
+                    </VBox>
+                </SplitPane>
+                <HBox alignment="CENTER" spacing="16.0">
+                    <VBox.margin>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                    </VBox.margin>
+                    <Button fx:id="startWork" mnemonicParsing="false" text="start working" />
+                    <Button fx:id="saveData" mnemonicParsing="false" text="save data" />
+                </HBox>
+            </VBox>
+        </AnchorPane>
+    </ScrollPane>
+</VBox>

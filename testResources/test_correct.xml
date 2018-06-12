@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<field>
+    <plant>
+        <id>0</id>
+        <type>de.shd.farm.plant.More</type>
+        <weight>12.3456</weight>
+        <harvested>false</harvested>
+    </plant>
+    <plant>
+        <id>0</id>
+        <type>de.shd.farm.plant.Wheat</type>
+        <weight>67.8901</weight>
+        <harvested>false</harvested>
+    </plant>
+</field>

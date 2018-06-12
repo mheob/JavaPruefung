@@ -1,0 +1,15 @@
+{
+  "field": {
+    "weight": 12.3456,
+    "id": 0,
+    "type": "de.shd.farm.plant.More",
+    "harvested": false
+  }
+{
+  "weight": 67.8901
+  "id": 0
+  "types": "de.shd.farm.plant.Wheat"
+  "harvested": false
+}
+
+}

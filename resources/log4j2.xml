@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <properties>
+        <property name="name">app</property>
+        <property name="patternConsole">%d{yyyy-MM-dd HH:mm:ss.SSS} | %-5.5p | %18.18t | %35.35C:%-4.4L | %msg%n</property>
+        <property name="patternFile">[%p] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%C:%L] %m%n</property>
+    </properties>
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${patternConsole}"/>
+        </Console>
+        <RollingFile name="RollingFile" fileName="logs/${name}.log" filePattern="logs/$${date:yyyy-MM}/${name}-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout>
+                <pattern>${patternFile}</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/> <!-- rolling file daily -->
+                <SizeBasedTriggeringPolicy size="2 MB"/> <!-- or rolling every 2 MB -->
+            </Policies>
+        </RollingFile>
+    </appenders>
+    <loggers>
+        <root level="debug"> <!-- log everything -->
+            <appender-ref ref="Console"/> <!-- write to console -->
+            <appender-ref ref="RollingFile"/> <!-- and write to a rolling file -->
+        </root>
+    </loggers>
+</configuration>
